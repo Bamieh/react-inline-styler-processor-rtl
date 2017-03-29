@@ -1,6 +1,6 @@
 # react-inline-styler-processor-rtl
 
-(Right to left / left to right) dynamic css processing.
+(Right to left / left to right) dynamic inline styles processing.
 
 RTL processor for React inline styler [react-inline-styler](https://github.com/Bamieh/react-inline-styler)
 
@@ -8,12 +8,25 @@ RTL processor for React inline styler [react-inline-styler](https://github.com/B
 This processor adds new syntax for the inline styles mainly, "start" and "end" which are dynamically changed to left or right depending on the wanted app language direction, by specifing `isRTL` in the `ReactInlineStylerProvider`.
 
 
-# Usage
+# Getting started
+
+```
+npm install react-inline-styler-processor-rtl
+```
+
+# Example Usage
 
 ```
 //App.js
-<Provider configs={{isRTL: true}}>
-</Provider>
+
+import rtlProcessor from 'react-inline-styler-processor-rtl'
+// or var rtlProcessor = require('react-inline-styler-processor-rtl')
+
+const pipeline = [rtlProcessor];
+const configs = {isRTL: true};
+
+<ReactInlineStylerProvider configs={configs} pipeline={pipeline}>
+</ReactInlineStylerProvider>
 ```
 
 ```
@@ -22,7 +35,7 @@ const styles = function() {
   return {
     rootStyle: {
       float: 'start',
-      paddingStart: 10
+      paddingStart: ...
     }
   }
 }
