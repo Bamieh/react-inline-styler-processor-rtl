@@ -17,3 +17,7 @@ after_success:
   - yarn codecov
   - yarn coveralls
 cache: yarn
+deploy:
+  provider: npm
+  email: ahmadbamieh@gmail.com
+  api_key: $NPM_TOKEN

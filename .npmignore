@@ -1,6 +1,6 @@
 test
 example
-.sublime-*
+*.sublime-*
 .idea
 build
 tools
