@@ -40,5 +40,19 @@ const transformOrigin = {
     expectedLTR: 'right'
   }]
 }
+const textAlign = {
+  describe: 'textAlign',
+  cases: [{
+    input: 'textAlign',
+    value: 'start',
+    expectedRTL: 'right',
+    expectedLTR: 'left'
+  }, {
+    input: 'textAlign',
+    value: 'end',
+    expectedRTL: 'left',
+    expectedLTR: 'right'
+  }]
+}
 
-export default [transformOrigin, direction, float]
+export default [transformOrigin, direction, float, textAlign]
