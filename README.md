@@ -88,7 +88,15 @@ localizing styles happens on the key of the attibute, or its value. in LTR confi
   transform: skew
 }
 ```
+5. textAlign
 
+  `text-align` values' `start` and `end` are supported in all browers but not in IE11+ and Edge. Therefore, this transform was added.
+```
+{
+  textAlign: 'start'
+  textAlign: 'end'
+}
+```
 ### Localed Keys
 
 1. margins and paddings

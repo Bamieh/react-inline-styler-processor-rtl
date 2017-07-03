@@ -39,7 +39,7 @@ const attributeValueReplacementFactory = (isRTL) => {
 
   return (attrubuteKey, attrubuteValue) => {
     switch (attrubuteKey) {
-      // case 'textAlign':
+      case 'textAlign':
       case 'float':
       case 'transformOrigin':
         return startEndReplacer(attrubuteValue, leftRightReplacements);
