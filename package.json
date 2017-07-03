@@ -4,6 +4,9 @@
   "description": "React Inline Styler RTL Processors.",
   "main": "./distribution/index.js",
   "author": "Ahmad Bamieh",
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.24.1",
