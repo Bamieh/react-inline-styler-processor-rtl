@@ -11,13 +11,12 @@ const maybeUpperCaseFirst = (str, cond) => {
 
 
 const startEndReplacer = (str, {startReplacement, endReplacement}) => {
-  return str ?
-  str.replace(/(s|S)tart|(?:e|E)nd/, (match, isStart, index) => {
+  if(!str) return;
+  return str.replace(/(s|S)tart|(?:e|E)nd/, (match, isStart, index) => {
     const replacement = isStart? startReplacement : endReplacement,
           shouldUpperCase = index > 0;
     return maybeUpperCaseFirst(replacement, shouldUpperCase)
   })
-  : str;
 }
 
 const getLeftRightRepalcements = (isRTL) => ({
