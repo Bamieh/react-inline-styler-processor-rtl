@@ -52,6 +52,16 @@ const textAlign = {
     value: 'end',
     expectedRTL: 'left',
     expectedLTR: 'right'
+  }, {
+    input: 'textAlign',
+    value: null,
+    expectedRTL: null,
+    expectedLTR: null,
+  }, {
+    input: 'textAlign',
+    value: undefined,
+    expectedRTL: undefined,
+    expectedLTR: undefined,
   }]
 }
 

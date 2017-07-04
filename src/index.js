@@ -11,11 +11,13 @@ const maybeUpperCaseFirst = (str, cond) => {
 
 
 const startEndReplacer = (str, {startReplacement, endReplacement}) => {
-  return str.replace(/(s|S)tart|(?:e|E)nd/, (match, isStart, index) => {
+  return str ?
+  str.replace(/(s|S)tart|(?:e|E)nd/, (match, isStart, index) => {
     const replacement = isStart? startReplacement : endReplacement,
           shouldUpperCase = index > 0;
     return maybeUpperCaseFirst(replacement, shouldUpperCase)
-  });
+  })
+  : str;
 }
 
 const getLeftRightRepalcements = (isRTL) => ({
@@ -81,7 +83,8 @@ export default function processor(styleObject, configurations) {
 
   const transformAttributeKey = attributeKeyReplacementFactory(isRTL);
   const transformAttributeValue = attributeValueReplacementFactory(isRTL);
-  return Object.entries(styleObject).reduce((acc, [key, value]) => {
+  return Object.entries(styleObject)
+  .reduce((acc, [key, value]) => {
     const transformedKey = transformAttributeKey(key);
     const transformedValue = transformAttributeValue(key, value);
 
