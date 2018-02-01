@@ -1,4 +1,4 @@
-require('babel-register')();
+require('@babel/register')();
 process.env.NODE_ENV = 'test';
 
 var jsdom = require('jsdom').jsdom;
